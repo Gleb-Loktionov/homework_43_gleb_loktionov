@@ -1,0 +1,38 @@
+{% extends 'base.html'  %}
+
+{% block content %}
+<form action="" method="post">
+    {% csrf_token %}
+    <div class="mt-5 first_inp_marg">
+        <label class="me-1">First number:</label>
+        <input type="number" step="any" required name="first_num"><br>
+    </div>
+    <div class="mt-5">
+        <label class="me-1">Second number:</label>
+        <input type="number" required step="any" name="second_num"><br>
+    </div>
+    <div class="radio_marg">
+        <div class="d-flex">
+            <input type="radio" name="operation" value="add">
+            <p class="mt-2 ms-1">add</p><br>
+        </div>
+        <div class="d-flex">
+            <input type="radio" name="operation" value="subtract"><br>
+            <p class="mt-2 ms-1">subtract</p><br>
+        </div>
+        <div class="d-flex">
+            <input type="radio" name="operation" value="multiply"><br>
+            <p class="mt-2 ms-1">multiply</p><br>
+        </div>
+        <div class="d-flex">
+            <input type="radio" name="operation" value="divide"><br>
+            <p class="mt-2 ms-1">divide</p><br>
+        </div>
+    </div>
+    <div class="mt-5 button-marg">
+        <input type="submit" value="Calculate">
+    </div>
+
+</form>
+    <h2 class="mt-5">{{ calc_result }}</h2>
+{% endblock %}
